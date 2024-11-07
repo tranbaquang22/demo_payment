@@ -1,0 +1,15 @@
+<!-- payments/templates/payments/checkout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PayPal Checkout</title>
+</head>
+<body>
+    <h1>Pay with PayPal</h1>
+    <form action="{% url 'checkout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Pay $500</button>
+    </form>
+</body>
+</html>

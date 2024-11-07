@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Options</title>
+    <script src="https://pay.google.com/gp/p/js/pay.js" async onload="onGooglePayLoaded()"></script>
+    <script src="{% static 'payments/google_pay.js' %}"></script>
+</head>
+<body>
+    <h1>Choose Your Payment Method</h1>
+    
+
+
+    <form action="{% url 'checkout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Pay with PayPal</button>
+    </form>
+
+
+    <div id="container" style="margin-top: 20px;"></div>
+
+
+    <div id="payment-result" style="margin-top: 20px; font-weight: bold;"></div>
+</body>
+</html>
